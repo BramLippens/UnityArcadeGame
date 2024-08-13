@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Boundary
   - Enemy
+  - Fighter
+  - Scout
   layers:
   - Default
   - TransparentFX
