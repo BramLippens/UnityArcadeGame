@@ -5,12 +5,11 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float moveSpeed = 2;
-    private Animator destroyFighter;
-    private Animator destroyScout;
+    private PointManager pointManager;
     // Start is called before the first frame update
     void Start()
     {
-
+        pointManager = GameObject.Find("PointManager").GetComponent<PointManager>();
     }
 
     // Update is called once per frame
@@ -28,10 +27,12 @@ public class Projectile : MonoBehaviour
                 if (collision.gameObject.CompareTag("Fighter"))
                 {
                     enemyAnimator.Play("DestroyFighter");
+                    pointManager.UpdateScore(100);
                 }
                 else if (collision.gameObject.CompareTag("Scout"))
                 {
                     enemyAnimator.Play("DestroyScout");
+                    pointManager.UpdateScore(50);
                 }
 
                 Destroy(collision.gameObject, enemyAnimator.GetCurrentAnimatorStateInfo(0).length + 0.75f);

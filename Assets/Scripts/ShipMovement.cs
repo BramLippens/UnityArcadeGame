@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShipMovement : MonoBehaviour
 {
-    public float moveSpeed = 2;
+    private float moveSpeed = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class ShipMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Boundary")
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - 0.25f, transform.position.z);
             moveSpeed *= -1;
         }
     }

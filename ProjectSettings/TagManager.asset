@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Fighter
   - Scout
+  - Enemy Bomb
   layers:
   - Default
   - TransparentFX
